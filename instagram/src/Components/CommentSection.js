@@ -4,8 +4,7 @@ const CommentSection = props => {
 
     return(
         <div className="individual-comment">
-           <h3>{props.comment.username}</h3>
-           <h3>{props.comment.text}</h3>
+           <p><span>{props.comment.username} </span>{props.comment.text}</p>
         </div>
     );
 }
