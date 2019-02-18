@@ -8,7 +8,41 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.App{
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  background: white;
+  border-bottom: 1px solid black;
+}
+
+.search-bar{
+  width: 100%;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo{
+  width: 50px;
+  height: 50px;
+  margin-right: 45px;
+}
+
+.text-logo{
+  font-size: 20px;
+}
+
+.search-text{
+  width: 210px;
+  height: 22px;
+  border-radius: 3px;
+  background: #F4F4F4;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  color: #999;
+  border: 1px solid rgb(140, 140, 140);
+  
 }
