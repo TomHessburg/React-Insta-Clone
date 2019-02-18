@@ -25,8 +25,10 @@ const PostContainer = props => {
             <p className="timestamp">{props.data.timestamp}</p>
             
             <div className="leave-comment">
-                <input placeholder="Add a comment..." />
+            <form onSubmit={props.handelCommentSubmit} id={props.data.id} >
+                <input placeholder="Add a comment..." onChange={props.handelComment} />
                 <img src="" alt=""/>
+            </form>
             </div>
         </div>
     );

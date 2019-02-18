@@ -11,18 +11,46 @@ class App extends Component {
 
     this.state = {
       data: dummyData,
-      searchInput: "" //search input comes from the search bar and is fed into the data before its mapped over
+      searchInput: "", //search input comes from the search bar and is fed into the data before its mapped over
+      username: "tom",
+      commentInput: ""
+    }
+  }
+
+  handelComment = e => {
+  
+    this.setState({
+      commentInput: e.target.value
+    })
+  }
+
+  handelCommentSubmit = e => {
+    e.preventDefault();
+
+    const newComment = {
+      username: this.state.username,
+      text: this.state.commentInput
     }
 
+
+    this.setState({
+      data: this.state.data.map(post => {
+        if(post.id == e.target.id){
+          post.comments = [...post.comments, newComment]
+          return post
+        }
+
+        else{
+          return post
+        }
+      })
+    })
   }
 
   handelSearchChange = e => {
-    console.log("asdas")
-
     this.setState({
       searchInput: e.target.value
     })
-
   }
 
   render() {
@@ -34,7 +62,14 @@ class App extends Component {
         />
 
 
-        {this.state.data.filter(post => post.username.includes(this.state.searchInput)).map((post, index) => <PostContainer data={post} key={index}/>)}
+        {this.state.data.filter(post => post.username
+          .includes(this.state.searchInput))
+          .map((post, index) => <PostContainer 
+          data={post} 
+          key={index} 
+          handelComment={this.handelComment} 
+          handelCommentSubmit={this.handelCommentSubmit}
+          />)}
       </div>
     );
   }
