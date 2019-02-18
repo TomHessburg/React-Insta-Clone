@@ -13,7 +13,6 @@ body {
   margin: 0 auto;
   max-width: 1200px;
   background: white;
-  border-bottom: 1px solid black;
 }
 
 .search-bar{
@@ -22,6 +21,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 50px;
 }
 
 .logo{
@@ -45,4 +46,35 @@ body {
   color: #999;
   border: 1px solid rgb(140, 140, 140);
   
+}
+
+.full-post{
+  border: 1px solid rgb(196, 196, 196);
+  width: 640px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 15px;
+}
+
+.top-of-post{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.top-of-post img{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.top-of-post h2{
+  font-size: 18px;
+}
+
+.post-img{
+  width: 100%;
 }
