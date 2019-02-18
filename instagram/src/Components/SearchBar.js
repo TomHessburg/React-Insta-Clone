@@ -6,7 +6,11 @@ const SearchBar = props => {
         <div className="search-bar">
             <img src=""/>
             <img src="" />
-            <input placeholder="Search..." className="search-text" />
+            <input placeholder="Search..." 
+            className="search-text" 
+            value={props.value}
+            onChange={props.handelSearchChange}
+            />
             <img src=""/>
             <img src=""/>
             <img src=""/>
