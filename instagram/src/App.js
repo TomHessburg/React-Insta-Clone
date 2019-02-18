@@ -11,17 +11,16 @@ class App extends Component {
 
     this.state = {
       data: dummyData,
-      searchInput: ""
+      searchInput: "" //search input comes from the search bar and is fed into the data before its mapped over
     }
 
   }
-
 
   render() {
     return (
       <div className="App">
         <SearchBar />
-        {this.state.data.map((post, index) => <PostContainer data={post} key={index}/>)}
+        {this.state.data.filter(post => post.username.includes(this.state.searchInput)).map((post, index) => <PostContainer data={post} key={index}/>)}
       </div>
     );
   }
