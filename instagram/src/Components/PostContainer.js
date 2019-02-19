@@ -18,7 +18,7 @@ const PostContainer = props => {
 
             <div className="just-above-comms">
                 <div className="like-comment">
-                    <i onClick={props.likePost} id={props.data.id} className="far fa-heart" ></i>
+                    <i onClick={props.likePost} onDoubleClick={props.unlikePost} id={props.data.id} className="far fa-heart" ></i>
                     <i className="far fa-comment"></i>
                 </div>
                 <h3 className="likes-text">{props.data.likes} likes</h3>
@@ -60,6 +60,7 @@ PostContainer.propTypes = {
     handelComment: PropTypes.func,
     value: PropTypes.string,
     likePost: PropTypes.func,
+    deleteComment: PropTypes.func
 
 }
 export default PostContainer;

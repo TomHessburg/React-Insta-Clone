@@ -67,7 +67,7 @@ class App extends Component {
   }
 
   likePost = e => {
-    console.log(e.target)
+   
 
     this.setState({
       data: this.state.data.map(post => {
@@ -88,6 +88,32 @@ class App extends Component {
 
   }
 
+  unlikePost = e => {
+    console.log(e.target)
+
+    // this.setState({
+    //   data: this.state.data.map(post => {
+    //     if(e.target.id == 0){
+    //       console.log(post.likes)
+    //       post.likes = post.likes-1;
+
+    //       e.target.id = 1; //I know this is stupid but it kind of works so whatever lol
+
+    //       return post;
+    //     }
+
+    //     else{
+    //       return post
+    //     }
+    //   })
+    // })
+
+
+  }
+
+
+
+
   render() {
     return (
       <div className="App">
@@ -104,7 +130,11 @@ class App extends Component {
           .map((post, index) => <PostContainer 
           data={post} 
           key={index} 
+
+
           likePost={this.likePost}
+          unlikePost={this.unlikePost}
+
           handelComment={this.handelComment} 
           handelCommentSubmit={this.handelCommentSubmit}
           value={this.state.commentInput}

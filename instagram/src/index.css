@@ -81,8 +81,6 @@ body {
 
 
 
-
-
 .loading-text{
   text-align: center;
   display: block;
@@ -156,6 +154,7 @@ body {
   font-size: 13px;
   width: 100%;
   text-align: start;
+  cursor: pointer;
 }
 
 .individual-comment span{
@@ -220,5 +219,10 @@ form{
   width: 60px;
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+}
+
+.fa-heart:hover{
+  color: rgb(255, 0, 0);
 }
 
