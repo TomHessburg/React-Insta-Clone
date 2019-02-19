@@ -10,12 +10,24 @@ class App extends Component {
     super();
 
     this.state = {
-      data: dummyData,
+      data: [],
       searchInput: "", //search input comes from the search bar and is fed into the data before its mapped over
       username: "tom",
-      commentInput: ""
+      commentInput: "",
+      isLoading: true
     }
   }
+
+  componentDidMount(){
+
+    setTimeout(() => {
+      this.setState({
+        data: dummyData,
+        isLoading: false
+      })
+    }, 1000)
+  }
+
 
   handelComment = e => {
   
@@ -62,6 +74,8 @@ class App extends Component {
         value={this.state.searchInput}
         />
 
+        { this.state.isLoading ? <div className="loading-text"> Loading...</div> : null }
+        
 
         {this.state.data.filter(post => post.username
           .includes(this.state.searchInput))

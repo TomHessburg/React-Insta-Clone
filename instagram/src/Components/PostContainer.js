@@ -43,8 +43,6 @@ const PostContainer = props => {
     );
 }
 
-
-
 PostContainer.propTypes = {
     data: PropTypes.shape({
         username: PropTypes.string,
@@ -56,12 +54,11 @@ PostContainer.propTypes = {
             username: PropTypes.string,
             text: PropTypes.string
         }))
-    })
+    }),
+    handelCommentSubmit: PropTypes.func,
+    handelComment: PropTypes.func,
+    value: PropTypes.string
 
 }
-
-
-
-
 export default PostContainer;
 
