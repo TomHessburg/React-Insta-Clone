@@ -66,6 +66,28 @@ class App extends Component {
     })
   }
 
+  likePost = e => {
+    console.log(e.target)
+
+    this.setState({
+      data: this.state.data.map(post => {
+        if(post.id == e.target.id){
+          post.likes = post.likes+1;
+
+          e.target.id = 0; //just for now so you can only like the post once
+
+          return post;
+        }
+
+        else{
+          return post
+        }
+      })
+    })
+
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -82,6 +104,7 @@ class App extends Component {
           .map((post, index) => <PostContainer 
           data={post} 
           key={index} 
+          likePost={this.likePost}
           handelComment={this.handelComment} 
           handelCommentSubmit={this.handelCommentSubmit}
           value={this.state.commentInput}

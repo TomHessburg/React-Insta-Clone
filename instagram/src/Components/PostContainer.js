@@ -18,11 +18,13 @@ const PostContainer = props => {
 
             <div className="just-above-comms">
                 <div className="like-comment">
-                    <i className="far fa-heart"></i>
+                    <i onClick={props.likePost} id={props.data.id} className="far fa-heart" ></i>
                     <i className="far fa-comment"></i>
                 </div>
                 <h3 className="likes-text">{props.data.likes} likes</h3>
             </div>
+
+
 
 
             <div className="comments-section">
@@ -31,7 +33,6 @@ const PostContainer = props => {
                 })}
             </div>
             <p className="timestamp">{props.data.timestamp}</p>
-            
             
             <div className="leave-comment">
             <form onSubmit={props.handelCommentSubmit} id={props.data.id} >
@@ -57,7 +58,8 @@ PostContainer.propTypes = {
     }),
     handelCommentSubmit: PropTypes.func,
     handelComment: PropTypes.func,
-    value: PropTypes.string
+    value: PropTypes.string,
+    likePost: PropTypes.func,
 
 }
 export default PostContainer;
