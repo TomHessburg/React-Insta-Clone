@@ -16,9 +16,15 @@ class App extends Component {
       commentInput: "",
       isLoading: true
     }
+    
   }
 
   componentDidMount(){
+    // localStorage.setItem("username", this.state.username);
+    // localStorage.setItem("data", JSON.stringify(this.state.data));
+    // //console.log(localStorage);
+    // var data = JSON.parse(localStorage.getItem('data');
+    // console.log(data)
 
     setTimeout(() => {
       this.setState({
@@ -91,22 +97,22 @@ class App extends Component {
   unlikePost = e => {
     console.log(e.target)
 
-    // this.setState({
-    //   data: this.state.data.map(post => {
-    //     if(e.target.id == 0){
-    //       console.log(post.likes)
-    //       post.likes = post.likes-1;
+    this.setState({
+      data: this.state.data.map(post => {
+        if(e.target.id == 0){
+          console.log(post.likes)
+          post.likes = post.likes-1;
 
-    //       e.target.id = 1; //I know this is stupid but it kind of works so whatever lol
+          e.target.id = 1; //I know this is stupid but it kind of works so whatever lol
 
-    //       return post;
-    //     }
+          return post;
+        }
 
-    //     else{
-    //       return post
-    //     }
-    //   })
-    // })
+        else{
+          return post
+        }
+      })
+    })
 
 
   }
@@ -115,6 +121,7 @@ class App extends Component {
 
 
   render() {
+    
     return (
       <div className="App">
         <SearchBar 
