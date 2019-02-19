@@ -43,7 +43,8 @@ class App extends Component {
         else{
           return post
         }
-      })
+      }),
+      commentInput: ""
     })
   }
 
@@ -69,6 +70,7 @@ class App extends Component {
           key={index} 
           handelComment={this.handelComment} 
           handelCommentSubmit={this.handelCommentSubmit}
+          value={this.state.commentInput}
           />)}
       </div>
     );
