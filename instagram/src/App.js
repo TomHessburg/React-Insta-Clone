@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import SearchBar from './Components/SearchBar';
 import dummyData from './dummy-data'
-import PostContainer from './Components/PostContainer'
+// import PostContainer from './Components/PostContainer'
+import PostsPage from './Components/PostsPage'
+import authenticate from './Components/authentication/authenticate'
+import Login from './Components/login/Login'
+
+
 
 class App extends Component {
 
@@ -46,7 +51,7 @@ class App extends Component {
     e.preventDefault();
 
     const newComment = {
-      username: this.state.username,
+      username: localStorage.getItem("username"),
       text: this.state.commentInput
     }
 
@@ -117,6 +122,12 @@ class App extends Component {
 
   }
 
+  logOut = e => {
+    e.preventDefault();
+    localStorage.clear();
+    window.location.reload();
+  }
+
 
 
 
@@ -124,31 +135,29 @@ class App extends Component {
     
     return (
       <div className="App">
-        <SearchBar 
-        handelSearchChange={this.handelSearchChange}
-        value={this.state.searchInput}
-        />
+          <SearchBar 
+          handelSearchChange={this.handelSearchChange}
+          value={this.state.searchInput}
+          logOut={this.logOut}
+          />
 
-        { this.state.isLoading ? <div className="loading-text"> Loading...</div> : null }
-        
-
-        {this.state.data.filter(post => post.username
-          .includes(this.state.searchInput))
-          .map((post, index) => <PostContainer 
-          data={post} 
-          key={index} 
-
-
+          <PostsPage 
+          isLoading={this.state.isLoading} 
+          data={this.state.data}
+          searchInput={this.state.searchInput}
+          commentInput={this.state.commentInput}
           likePost={this.likePost}
           unlikePost={this.unlikePost}
-
-          handelComment={this.handelComment} 
+          handelComment={this.handelComment}
           handelCommentSubmit={this.handelCommentSubmit}
-          value={this.state.commentInput}
-          />)}
+          />
       </div>
     );
   }
 }
 
-export default App;
+
+const authenticateApp = authenticate(App)(Login);
+
+
+export default authenticateApp;

@@ -7,7 +7,7 @@ const SearchBar = props => {
         <div className="sarch-wrapper">
             <div className="search-bar">
                 <div className="instagram-wrapper">
-                    <i className="fab fa-instagram camera"></i>
+                    <i className="fab fa-instagram camera" onClick={props.logOut}></i>
                     <img className="insta-text" src="https://github.com/TomHessburg/React-Insta-Clone/blob/day-1-solution/instagram/src/assets/iglogo.png?raw=true"/>
                 </div>
                 
