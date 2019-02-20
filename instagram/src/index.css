@@ -53,6 +53,7 @@ body {
   margin-left: 40px;
   margin-bottom: 3px;
   border-right: 1px solid black;
+  cursor: pointer;
 }
 
 .social{
@@ -224,5 +225,42 @@ form{
 
 .fa-heart:hover{
   color: rgb(255, 0, 0);
+}
+
+
+.login{
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #4E49BE;
+  padding: 60px;
+  margin-top: 50px;
+}
+
+.login h1{
+  margin: 0;
+  font-size: 80px;
+  color: rgb(255, 255, 255);
+}
+.login p{
+  font-size: 28px;
+  color: rgb(255, 208, 252);
+  margin-bottom: 10px;
+}
+.login button{
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+.login input{
+  width: 150px;
+  height: 20px;
+  margin-right: 20px;
+}
+.login form{
+  display: flex;
+  flex-direction: column;
 }
 

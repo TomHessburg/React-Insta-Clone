@@ -1,6 +1,9 @@
 import React from 'react'
 
 
+
+
+
 class Login extends React.Component{
 
     constructor(){
@@ -44,7 +47,7 @@ class Login extends React.Component{
     render(){
         return (
             <div className="login">
-                <h1>Login!</h1>
+                <h1>Login</h1>
                 <form onSubmit={this.login}>
                     <p> username:</p>
                     <input id={1} type="text" value={this.state.username} onChange={this.handelChange} /> 
