@@ -2,9 +2,11 @@ import React from 'react';
 import PostContainer from './PostContainer'
 
 
+
+
 const PostsPage = props => {
     return (
-        <div className="posts-page">
+        <div>
 
 
         

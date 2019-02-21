@@ -1,4 +1,43 @@
 import React from 'react'
+import styled, { css } from 'styled-components';
+
+
+const LoginDiv = styled.div`
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #4E49BE;
+    padding: 60px;
+    margin-top: 50px;
+`;
+
+const LoginHeader = styled.h1`
+    margin: 0;
+    font-size: 80px;
+    color: rgb(255, 255, 255);
+`;
+const LoginPar = styled.p`
+    font-size: 28px;
+    color: rgb(255, 208, 252);
+    margin-bottom: 10px;
+`;
+const LoginButton = styled.button`
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    margin-top: 20px;
+`;
+const LoginInput = styled.input`
+    width: 150px;
+    height: 20px;
+    margin-right: 20px;
+`;
+
+const Loginform = styled.form`
+    display: flex;
+    flex-direction: column;
+`;
 
 
 
@@ -46,18 +85,18 @@ class Login extends React.Component{
 
     render(){
         return (
-            <div className="login">
-                <h1>Login</h1>
-                <form onSubmit={this.login}>
-                    <p> username:</p>
-                    <input id={1} type="text" value={this.state.username} onChange={this.handelChange} /> 
+            <LoginDiv>
+                <LoginHeader>Login</LoginHeader>
+                <Loginform onSubmit={this.login}>
+                    <LoginPar> username:</LoginPar>
+                    <LoginInput id={1} type="text" value={this.state.username} onChange={this.handelChange} /> 
     
-                    <p> password:</p>
-                    <input id={2} type="text" value={this.state.password} onChange={this.handelChange} /> 
+                    <LoginPar> password:</LoginPar>
+                    <LoginInput id={2} type="text" value={this.state.password} onChange={this.handelChange} /> 
                     
-                    <button>Login</button>
-                </form>
-            </div>
+                    <LoginButton>Login</LoginButton>
+                </Loginform>
+            </LoginDiv>
         );
     }
 }

@@ -7,6 +7,15 @@ import PostsPage from './Components/PostsPage'
 import authenticate from './Components/authentication/authenticate'
 import Login from './Components/login/Login'
 
+import styled, { css } from 'styled-components';
+
+
+const AppDiv = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  background: rgb(250, 250, 250);
+`;
+
 
 
 class App extends Component {
@@ -134,12 +143,13 @@ class App extends Component {
   render() {
     
     return (
-      <div className="App">
+      <AppDiv>
           <SearchBar 
           handelSearchChange={this.handelSearchChange}
           value={this.state.searchInput}
           logOut={this.logOut}
           />
+
 
           <PostsPage 
           isLoading={this.state.isLoading} 
@@ -151,7 +161,7 @@ class App extends Component {
           handelComment={this.handelComment}
           handelCommentSubmit={this.handelCommentSubmit}
           />
-      </div>
+      </AppDiv>
     );
   }
 }

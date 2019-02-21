@@ -1,11 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+
+const IndivCommentP = styled.p`
+    font-size: 13px;
+    width: 100%;
+    text-align: start;
+    cursor: pointer;
+`;
+
+const IndivCommentSpan = styled.span`
+    font-size: 15px;
+    font-weight: bold;
+`;
 
 const CommentSection = props => {
 
     return(
-        <div className="individual-comment" >
-           <p ><span>{props.comment.username} </span>{props.comment.text}</p>
+        <div>
+           <IndivCommentP><IndivCommentSpan>{props.comment.username} </IndivCommentSpan>{props.comment.text}</IndivCommentP>
         </div>
     );
 }
